@@ -134,8 +134,9 @@ nav a:hover nav a:focus{
   display:grid;
   grid-template-columns: 1fr 5fr 1fr;
   gap: 15px;
-  grid-template-columns: 50px auto 500px auto 50px;
   background-color: #737373;
+  align-items: center;
+  position: relative;
 }
 .container img{
   width:100%;
@@ -145,11 +146,9 @@ nav a:hover nav a:focus{
 first div in the grid  and place it in the grid. */
 .container div:first-child{
   grid-column: 1/-1;
-  min-height: 100px;
+  min-height: 500px;
   background-image: url(../images/header.jpg);
-  background-position: center top; /* Show top-right corner */
 }
-
 
 .container h1{
   text-align: center;
@@ -169,6 +168,7 @@ first div in the grid  and place it in the grid. */
   text-align: center;
   margin: 0 auto;
 }
+
 
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
@@ -230,27 +230,25 @@ first div in the grid  and place it in the grid. */
 
 /* Add your media query here */
 @media screen and (min-width:800px) {
-  nav{
+  nav {
     text-align:right;
     padding-top: 30px;
     padding-bottom: 30px;
   }
-  .text-block{
-    margin: 0 auto;
+  .container{
+    grid-template-columns: 50px auto 500px auto 50px;
+  }
+  
+  .about, .clients, .method-image, .contact-image{
+    grid-column: 3/ span 2;
+  }
+
+  .method, .contact, .about-image, .clients-image{
+    grid-column: 2/span 2;
   }
 }
-.about, .clients, .method-image, .contact-image{
-  grid-column: 3/ span 2;
-}
-
-.method, .contact, .about-image, .clients-image{
-  grid-column: 2/span 2;
-}
-
   /* Step 9: Write the selector/rule property to style the nav element */
-header nav{
-  padding: 30px;
-}
+
   /* Step 10: Write the selector/rule property to update the .container class */
 
 
